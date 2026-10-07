@@ -9,19 +9,25 @@ document.documentElement.setAttribute("data-tema", "escuro");
 (function(){ return;
   var salvo = null;
   try { salvo = localStorage.getItem("streit-tema"); } catch(e){}
-  var tema = salvo || (matchMedia("(prefers-color-scheme: light)").matches ? "claro" : "escuro");
+  var tema = "escuro"; // site em tema único: preto e dourado
   document.documentElement.setAttribute("data-tema", tema);
 })();
 </script>
 <meta name="description" content="Como funciona o implante dentário na Clínica Streit, em Jaraguá do Sul: indicação, etapas com tomografia 3D na clínica, cuidados e dúvidas frequentes. Tratamento incluído na Streit Experience 2.0.">
-<meta name="theme-color" content="#07090A" data-theme-color>
+<meta name="theme-color" content="#000000" data-theme-color>
 <!-- Segurança: a política de conteúdo (CSP) fica nos cabeçalhos da hospedagem
      (vercel.json / _headers). Se adicionar Analytics ou Pixel, inclua os domínios lá. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta property="og:title" content="Clinica Streit de Odontologia">
-<meta property="og:description" content="Implantes planejados em tomografia 3D, no Centro de Jaragua do Sul - SC.">
+<meta property="og:title" content="Implantes dentários · Clínica Streit">
+<meta property="og:description" content="Como funciona o implante dentário na Clínica Streit, em Jaraguá do Sul: indicação, etapas com tomografia 3D na clínica, cuidados e dúvidas frequentes. Tratamento incluído na Streit Experience 2.0.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://clinicastreit1.vercel.app/implantes.html">
+<meta property="og:image" content="https://clinicastreit1.vercel.app/img/hero-equipe.jpg">
+<meta property="og:image:width" content="627">
+<meta property="og:image:height" content="418">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://clinicastreit1.vercel.app/implantes.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,13 +43,14 @@ document.documentElement.setAttribute("data-tema", "escuro");
     "addressCountry": "BR"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": -26.4824026, "longitude": -49.0868673 },
-  "telephone": "+5547991585534",
+  "telephone": "+55-47-99158-5534",
+  "url": "https://clinicastreit1.vercel.app/",
+  "image": "https://clinicastreit1.vercel.app/img/fachada.jpg",
   "hasMap": "https://maps.app.goo.gl/wxe5YeSVV6sqLycd9",
   "sameAs": ["https://www.instagram.com/clinicastreit/"],
   "areaServed": "Jaragu\u00e1 do Sul e regi\u00e3o",
   "priceRange": "$$",
   "medicalSpecialty": "Dentistry",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "359" },
   "availableService": [
     {"@type": "MedicalProcedure", "name": "Implante dent\u00e1rio"},
     {"@type": "MedicalProcedure", "name": "Laminados cer\u00e2micos e facetas"},
@@ -56,7 +63,8 @@ document.documentElement.setAttribute("data-tema", "escuro");
   ]
 }
 </script>
-<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}
+.pular{position:absolute;left:12px;top:-80px;z-index:200;padding:12px 18px;background:#F1F5F4;color:#07090A;font:600 15px/1 system-ui,sans-serif;border-radius:4px;text-decoration:none}.pular:focus{top:12px;outline:2px solid #D9B26A;outline-offset:2px}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap">
@@ -64,7 +72,7 @@ document.documentElement.setAttribute("data-tema", "escuro");
 <style>
 /* ============================================================
    CLÍNICA STREIT — tokens de design
-   Paleta tirada da logo: preto frio, branco-osso, teal #00A890.
+   Paleta tirada da logo: preto frio, branco-osso, teal #C9A04F.
    Dois temas: escuro (padrão da marca) e claro. O tema segue o sistema
    do visitante até ele escolher no botão do cabeçalho; a escolha fica salva.
    ============================================================ */
@@ -79,14 +87,14 @@ document.documentElement.setAttribute("data-tema", "escuro");
   /* Texto */
   --bone:       #F1F5F4;
   --muted:      #92A5A1;
-  --muted-dim:  #6A7B78;
+  --muted-dim:  #7A8B88;
 
   /* Acento — teal da marca */
-  --teal:       #00A890;   /* cor exata da logo */
-  --teal-lit:   #26C6AE;   /* clareada p/ texto e CTA sobre preto */
-  --teal-glow:  #5FE3D0;
-  --teal-deep:  #075F55;
-  --on-teal:    #04211D;   /* texto sobre botão teal */
+  --teal:       #C9A04F;   /* cor exata da logo */
+  --teal-lit:   #D9B26A;   /* clareada p/ texto e CTA sobre preto */
+  --teal-glow:  #F0D9A0;
+  --teal-deep:  #6B5428;
+  --on-teal:    #14100A;   /* texto sobre botão teal */
 
   /* Superfícies translúcidas (cabeçalho e barra do celular) */
   --vidro:       rgba(7,9,10,.9);
@@ -121,7 +129,7 @@ document.documentElement.setAttribute("data-tema", "escuro");
 
   /* Logo da clínica, versão para fundo escuro. Declarada uma vez e
      reaproveitada no cabeçalho e no rodapé. */
-  --logo: url("img/logo-streit.png");
+  --logo: url("img/logo-streit-ouro.png");
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -268,7 +276,7 @@ section[id]{ scroll-margin-top: 108px; }
   inset: -30% -10% auto auto;
   width: min(760px, 92vw);
   aspect-ratio: 1;
-  background: radial-gradient(circle at 62% 38%, rgba(0,168,144,.17), transparent 62%);
+  background: radial-gradient(circle at 62% 38%, rgba(201,160,79,.17), transparent 62%);
   pointer-events: none;
 }
 .hero-grid{
@@ -332,7 +340,7 @@ section[id]{ scroll-margin-top: 108px; }
 .status[data-aberto="sim"]{ color: var(--teal-lit); }
 .status[data-aberto="sim"]::before{
   background: var(--teal-lit);
-  box-shadow: 0 0 0 4px rgba(38,198,174,.18);
+  box-shadow: 0 0 0 4px rgba(217,178,106,.18);
 }
 .status[data-aberto="nao"]{ color: var(--muted); }
 .hero-card-sub{ color: var(--muted-dim); font-size: var(--t-xs); }
@@ -893,7 +901,7 @@ section[id]{ scroll-margin-top: 108px; }
   align-content: start;
   justify-items: start;
   background:
-    radial-gradient(circle at 82% 12%, rgba(0,168,144,.13), transparent 58%),
+    radial-gradient(circle at 82% 12%, rgba(201,160,79,.13), transparent 58%),
     var(--ink-2);
 }
 .map-card .btn{ margin-top: .5rem; }
@@ -1395,8 +1403,8 @@ html.anim .campanha-fecho.is-in .campanha-selo{ opacity: 1; transform: none; }
   --bone:       #0E1615;
   --muted:      #465754;
   --muted-dim:  #5B6B68;
-  --teal:       #00A890;
-  --teal-lit:   #007D6B;
+  --teal:       #C9A04F;
+  --teal-lit:   #00735F;
   --teal-glow:  #00695A;
   --teal-deep:  #8ACFC3;
   --on-teal:    #FFFFFF;
@@ -1485,8 +1493,8 @@ html{ -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; 
 /* Status "aberto agora": três pulsos e para */
 html.anim .status[data-aberto="sim"]::before{ animation: pulso 2s ease-out 3; }
 @keyframes pulso{
-  0%{ box-shadow: 0 0 0 0 rgba(38,198,174,.5); }
-  70%,100%{ box-shadow: 0 0 0 8px rgba(38,198,174,0); }
+  0%{ box-shadow: 0 0 0 0 rgba(217,178,106,.5); }
+  70%,100%{ box-shadow: 0 0 0 8px rgba(217,178,106,0); }
 }
 
 /* HERO — entrada única, em cascata de 60ms */
@@ -1522,7 +1530,7 @@ html.anim :is(.band-head, .sobre-copy, .pilares li, .service, .step, .tech, .tec
 .service > *{ position: relative; z-index: 1; }
 .service::before{
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), rgba(38,198,174,.10), transparent 65%);
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), rgba(217,178,106,.10), transparent 65%);
   opacity: 0; transition: opacity .2s ease;
 }
 .service::after{
@@ -1572,7 +1580,7 @@ html.anim .nota.is-in .nota-dist dd span{ transform: scaleX(1); }
 .closer::before{
   content: ""; position: absolute; left: 50%; top: 50%; width: min(900px, 120vw); aspect-ratio: 2 / 1;
   transform: translate(-50%, -50%); pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(0,168,144,.14), transparent 62%);
+  background: radial-gradient(ellipse at center, rgba(201,160,79,.14), transparent 62%);
 }
 .closer-in{ position: relative; }
 
@@ -1634,7 +1642,7 @@ html.anim :is(.service, .member, .campanha-card){
 /* Hover com movimento: só onde existe mouse */
 @media (hover: hover) and (pointer: fine){
   .site-nav a:hover::after{ transform: scaleX(1); }
-  .btn-solid:hover{ box-shadow: 0 8px 24px -12px rgba(38,198,174,.6); }
+  .btn-solid:hover{ box-shadow: 0 8px 24px -12px rgba(217,178,106,.6); }
   .service-link:hover{ transform: translateX(3px); }
   .service:hover::before{ opacity: 1; }
   .service:hover::after{ transform: scaleX(1); }
@@ -1669,6 +1677,72 @@ html.anim :is(.service, .member, .campanha-card){
   html.anim .barra-toque{ transition: opacity 200ms ease; }
   html.anim .barra-toque:not(.is-on){ transform: none; opacity: 0; pointer-events: none; }
   .btn:active, .carousel-arrow:active, .socials a:active, .service-link:active{ transform: none; }
+}
+
+/* ============================================================
+   PRETO E DOURADO — o site inteiro na identidade da campanha.
+   Tema único (escuro). Mesmos componentes; muda a paleta e
+   entram detalhes em dourado: linhas, brilhos, botões e números.
+   ============================================================ */
+:root, :root[data-tema="claro"]{
+  color-scheme: dark;
+  --ink: #000000; --ink-2: #0B0906; --ink-3: #16120B;
+  --line: rgba(217,178,106,.24); --line-soft: rgba(217,178,106,.12);
+  --bone: #F3EFE6; --muted: #ABB0AA; --muted-dim: #959A93;
+  --teal: #C9A04F; --teal-lit: #D9B26A; --teal-glow: #F0D9A0; --teal-deep: rgba(217,178,106,.5);
+  --on-teal: #14100A;
+  --vidro: rgba(0,0,0,.88); --vidro-forte: rgba(0,0,0,.96); --sombra-head: rgba(0,0,0,.9);
+  --logo: url("img/logo-streit-ouro.png");
+}
+html, body{ background: #000; }
+::selection{ background: #D9B26A; color: #14100A; }
+.tema-btn{ display: none; }
+
+/* Cabeçalho com filete dourado */
+.site-head{ border-bottom: 1px solid var(--line-soft); }
+
+/* Seções: filete dourado que se dissolve nas pontas, no lugar da linha cinza */
+.band{ position: relative; }
+.band + .band{ border-top: 0; }
+.band:not(.campanha):not(.closer)::after{
+  content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(1120px, 88%); height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(217,178,106,.5), transparent);
+}
+/* Ritmo: seções alternadas um tom acima, com brilho dourado no canto */
+#tratamentos, #equipe, .band--avaliacoes, #contato{
+  background: radial-gradient(70% 55% at 100% 0%, rgba(217,178,106,.07), transparent 70%), var(--ink-2);
+}
+#clinica, #percurso, #duvidas{
+  background: radial-gradient(60% 50% at 0% 100%, rgba(217,178,106,.05), transparent 70%), #000;
+}
+
+/* Títulos: palavra em destaque em dourado */
+h1 em, h2 em{ font-style: normal; color: var(--teal-lit); }
+
+/* Faixa de números: dourado em degradê, como metal */
+.proof{ background: linear-gradient(180deg, #0B0906, #000); border-block: 1px solid var(--line-soft); }
+.proof-num{
+  background: linear-gradient(180deg, #F6E3B4 0%, #D9B26A 55%, #A9802F 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* Botões principais em dourado com leve volume */
+.btn-solid{ background: linear-gradient(180deg, #E6C680, #C9A04F); border-color: #C9A04F; color: #14100A; }
+.btn-solid:hover{ background: linear-gradient(180deg, #F3DDA6, #D9B26A); color: #14100A; }
+.btn-ghost{ border-color: var(--line); }
+
+/* Cartões: brilho fino na borda de cima */
+.service, .member, .quote, .tech, .nota, .hero-card, .campanha-card, .faq details{
+  box-shadow: inset 0 1px 0 rgba(240,217,160,.07);
+}
+.hero-card{ background: linear-gradient(180deg, #0F0C08, #0A0806); }
+
+/* Rodapé */
+.site-foot{ position: relative; background: #050403; }
+.site-foot::before{
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217,178,106,.6), transparent);
 }
 </style>
 <style>
@@ -1733,6 +1807,8 @@ body{ background: #000; }
 .tema-btn{ display: none; }
 </style>
 
+<a class="pular" href="#topo">Pular para o conteúdo</a>
+
 <!-- ============================================================
      CABEÇALHO
      ============================================================ -->
@@ -1772,7 +1848,7 @@ body{ background: #000; }
 <main class="campanha pt" id="topo">
 
   <section class="band pt-hero">
-    <div class="wrap pt-hero-grid">
+    <div class="wrap">
       <div>
       <ol class="pt-trilha" aria-label="Você está em">
         <li><a href="index.html">Início</a></li>
@@ -1784,7 +1860,6 @@ body{ background: #000; }
       <p class="lede">O implante é um pino de titânio instalado no osso, no lugar da raiz do dente perdido. Depois que o osso se firma em volta dele, o pino sustenta uma coroa fixa, que não sai para limpar e não depende dos dentes vizinhos.</p>
       <p class="pt-selo">Tomografia 3D feita aqui na clínica</p>
       </div>
-      <div class="pt-foto"><image-slot id="implantes-hero" shape="rect" placeholder="Foto do procedimento ou do consultório"></image-slot></div>
     </div>
   </section>
 
@@ -1838,7 +1913,6 @@ body{ background: #000; }
         <h2 id="pt-etapas">As cinco etapas</h2>
         <p class="lede">Os prazos variam de caso para caso. Você recebe o cronograma do seu tratamento na primeira consulta.</p>
       </div>
-      <div class="pt-foto pt-foto--larga"><image-slot id="implantes-etapas" shape="rect" placeholder="Foto do planejamento digital ou da tomografia"></image-slot></div>
       <div class="journey">
         <article class="step"><p class="step-n">01</p><h3>Avaliação e tomografia 3D</h3><p>Exame clínico, radiografia panorâmica e tomografia de feixe cônico feita na hora, aqui mesmo. Você sai com diagnóstico e orçamento fechado.</p><p class="step-time">1 consulta · ~60 min</p></article>
         <article class="step"><p class="step-n">02</p><h3>Planejamento digital</h3><p>A posição de cada implante é definida em software sobre a sua tomografia e vira um guia cirúrgico prototipado, que orienta a broca no dia.</p><p class="step-time">7 a 14 dias</p></article>
@@ -1947,7 +2021,8 @@ body{ background: #000; }
 
       <div class="foot-col">
         <h4>Institucional</h4>
-        <a href="#" data-politica>Política de privacidade</a>
+        <a href="privacidade.html" data-politica>Política de privacidade</a>
+        <a href="#" data-wa="lgpd" data-evento="lgpd_titular">Seus dados (LGPD)</a>
         <a href="index.html#duvidas">Dúvidas frequentes</a>
         <a href="index.html#equipe">Corpo clínico e CRO</a>
       </div>
@@ -2006,6 +2081,7 @@ const CONFIG = {
     // Uma mensagem por contexto: o paciente chega no WhatsApp com o
     // assunto já escrito, e a clínica sabe de qual parte do site ele veio.
     mensagens: {
+      lgpd: "Olá! Quero falar sobre os meus dados pessoais (acesso, correção ou exclusão).",
       agendar:      "Olá! Vim pelo site e gostaria de agendar uma avaliação.",
       implantes:    "Olá! Vim pelo site e gostaria de tirar uma dúvida sobre implantes dentários.",
       estetica:     "Olá! Vim pelo site e gostaria de uma avaliação de estética dental (facetas ou clareamento).",
@@ -2182,7 +2258,17 @@ const CONFIG = {
   // Mapa incorporado só entra se CONFIG.mapsEmbed estiver preenchido.
   var mapa = document.querySelector("[data-mapa]");
   var embed = urlSegura(CONFIG.mapsEmbed, ["maps.google.com", "www.google.com"]);
+  // LGPD: o mapa do Google só carrega depois do clique do visitante
   if (mapa && embed) {
+    var card = mapa.querySelector(".map-card");
+    var bt = document.createElement("button");
+    bt.type = "button"; bt.className = "btn btn-solid"; bt.textContent = "Mostrar mapa";
+    var av = document.createElement("p");
+    av.className = "map-card-sub"; av.textContent = "Ao abrir, o Google Maps recebe dados de navegação. Veja a política de privacidade.";
+    if (card) { card.appendChild(bt); card.appendChild(av); }
+    bt.addEventListener("click", carregarMapa, { once: true });
+  }
+  function carregarMapa(){
     var f = document.createElement("iframe");
     f.src = embed;
     f.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox");
@@ -2407,6 +2493,5 @@ document.querySelectorAll("[data-evento]").forEach(function(el){
 });
 </script>
 <!-- Esta página é sempre preta e dourada: sem troca de tema. -->
-<script src="image-slot.js"></script>
 </body>
 </html>
