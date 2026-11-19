@@ -9,12 +9,12 @@ document.documentElement.setAttribute("data-tema", "escuro");
 (function(){ return;
   var salvo = null;
   try { salvo = localStorage.getItem("streit-tema"); } catch(e){}
-  var tema = "escuro"; // site em tema único: preto e dourado
+  var tema = "claro"; // site em tema único: branco e turquesa
   document.documentElement.setAttribute("data-tema", tema);
 })();
 </script>
 <meta name="description" content="Política de privacidade do site da Clínica Streit de Odontologia, em Jaraguá do Sul (SC).">
-<meta name="theme-color" content="#000000" data-theme-color>
+<meta name="theme-color" content="#FFFFFF" data-theme-color>
 <!-- Segurança: a política de conteúdo (CSP) fica nos cabeçalhos da hospedagem
      (vercel.json / _headers). Se adicionar Analytics ou Pixel, inclua os domínios lá. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -1806,6 +1806,94 @@ h1 em, h2 em{ font-style: normal; color: var(--teal-lit); }
 body{ background: #000; }
 .tema-btn{ display: none; }
 </style>
+<style>
+/* ============================================================
+   PROPOSTA DE COR — Branco e turquesa
+   Sobrepõe a paleta do site inteiro, inclusive a abertura e a
+   seção da campanha Streit Experience.
+   ============================================================ */
+:root, :root[data-tema="claro"]{
+  color-scheme: light;
+  --ink: #FFFFFF; --ink-2: #F3F8F7; --ink-3: #E7F0EE;
+  --line: rgba(0,115,95,.20); --line-soft: rgba(0,115,95,.10);
+  --bone: #0E1615; --muted: #44524F; --muted-dim: #56645F;
+  --teal: #00A890; --teal-lit: #00735F; --teal-glow: #005E4E; --teal-deep: rgba(0,168,144,.45);
+  --on-teal: #FFFFFF;
+  --vidro: rgba(255,255,255,.88); --vidro-forte: rgba(255,255,255,.96); --sombra-head: rgba(14,22,21,.18);
+  --logo: url("img/logo-streit-claro.png");
+}
+html, body{ background: #FFFFFF; }
+body{ background: #FFFFFF; color: var(--bone); }
+::selection{ background: #00735F; color: #FFFFFF; }
+
+.hero::before, .hero-bg{ background: radial-gradient(circle at 62% 38%, rgba(0,168,144,.14), transparent 62%); }
+.status[data-aberto="sim"]::before{ box-shadow: 0 0 0 4px rgba(0,168,144,.18); }
+@keyframes pulso{
+  0%{ box-shadow: 0 0 0 0 rgba(0,168,144,.5); }
+  70%,100%{ box-shadow: 0 0 0 8px rgba(0,168,144,0); }
+}
+.service::before{ background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), rgba(0,168,144,.10), transparent 65%); }
+.closer::before{ background: radial-gradient(ellipse at center, rgba(0,168,144,.14), transparent 62%); }
+@media (hover: hover) and (pointer: fine){
+  .btn-solid:hover{ box-shadow: 0 8px 24px -12px rgba(0,168,144,.6); }
+}
+
+.band:not(.campanha):not(.closer)::after{ background: linear-gradient(90deg, transparent, rgba(0,168,144,.5), transparent); }
+#tratamentos, #equipe, .band--avaliacoes, #contato{
+  background: radial-gradient(70% 55% at 100% 0%, rgba(0,168,144,.07), transparent 70%), var(--ink-2);
+}
+#clinica, #percurso, #duvidas{
+  background: radial-gradient(60% 50% at 0% 100%, rgba(0,168,144,.05), transparent 70%), var(--ink);
+}
+.proof{ background: linear-gradient(180deg, #F3F8F7, #FFFFFF); }
+.proof-num{ background: linear-gradient(180deg, #00A890 0%, #00806E 55%, #005446 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.btn-solid{ background: linear-gradient(180deg, #008A75, #007F6C); border-color: #007F6C; color: #FFFFFF; }
+.btn-solid:hover{ background: linear-gradient(180deg, #007F6C, #006B5A); color: #FFFFFF; }
+
+.service, .member, .quote, .tech, .nota, .hero-card, .campanha-card, .faq details{ box-shadow: 0 1px 2px rgba(14,22,21,.04), 0 12px 32px -20px rgba(14,22,21,.18); }
+.hero-card{ background: #FFFFFF; }
+.site-foot{ background: #EEF5F3; }
+.site-foot::before{ background: linear-gradient(90deg, transparent, rgba(0,168,144,.6), transparent); }
+.pt-cta{ background: radial-gradient(120% 90% at 100% 0%, rgba(0,168,144,.08), transparent 60%), var(--ink-2); }
+.pt-cta img{ box-shadow: 0 20px 60px -20px rgba(0,168,144,.35); }
+/* ---------- Campanha Streit Experience nas cores da proposta ---------- */
+.exp{
+  --ouro: #00735F; --ouro-claro: #005E4E; --ouro-linha: rgba(0,168,144,.28);
+  background: #FFFFFF; color: #0E1615; color-scheme: light;
+}
+.exp-marca, .exp-apoio, .exp-rolar, .exp-contador, .exp-lista .desc{ color: #44524F; }
+.exp-nota{ color: #56645F; }
+.exp-titulo, .exp-faixa, .exp-lista a{ color: #0E1615; }
+.exp-lista a{ background: color-mix(in srgb, #FFFFFF 55%, transparent); }
+.exp-lista a:active{ background: rgba(0,168,144,.08); }
+.exp-pular{ border-color: rgba(0,168,144,.45); }
+.exp .btn-ouro{ background: linear-gradient(180deg, #008A75, #007F6C); color: #FFFFFF; border-color: #007F6C; }
+.exp .btn-ouro:hover{ background: linear-gradient(180deg, #007F6C, #006B5A); color: #FFFFFF; }
+.exp .btn-linha{ color: #0E1615; border-color: rgba(0,115,95,.20); }
+.exp-contador b{ color: #005E4E; }
+@media (hover: hover) and (pointer: fine){ .exp-lista a:hover{ background: rgba(0,168,144,.07); } }
+.campanha{
+  --ink: #FFFFFF; --ink-2: #F3F8F7; --ink-3: #E7F0EE;
+  --line: rgba(0,115,95,.20); --line-soft: rgba(0,115,95,.10);
+  --bone: #0E1615; --muted: #44524F; --muted-dim: #56645F;
+  --teal: #00A890; --teal-lit: #00735F; --teal-glow: #005E4E; --teal-deep: rgba(0,168,144,.45);
+  --on-teal: #FFFFFF;
+  background: #FFFFFF; color: var(--bone); color-scheme: light;
+}
+.campanha .campanha-moldura{ background: radial-gradient(120% 80% at 100% 0%, rgba(0,168,144,.07), transparent 60%), var(--ink-2); }
+.campanha .campanha-frase{ color: #005E4E; }
+.campanha .btn-solid:hover{ background: linear-gradient(180deg, #007F6C, #006B5A); color: #FFFFFF; }
+.campanha-selo{ box-shadow: 0 0 0 1px rgba(0,168,144,.18), 0 20px 60px -20px rgba(0,168,144,.35); }
+@media (min-width: 1100px){ .campanha-card::before{ background: #00735F; } }
+@media (min-width: 1100px) and (hover: hover) and (pointer: fine){
+  .campanha-card:hover :is(h3, .campanha-card-n, dt, dd), .campanha-card:hover > p{ color: #FFFFFF; }
+  .campanha-card:hover .confirmar{ color: #FFFFFF; border-color: #FFFFFF; }
+  .campanha-card:hover .btn{ background: #FFFFFF; color: #00735F; border-color: #FFFFFF; }
+}
+
+</style>
+
 
 <a class="pular" href="#topo">Pular para o conteúdo</a>
 
@@ -1819,7 +1907,6 @@ body{ background: #000; }
     </a>
 
     <nav class="site-nav" aria-label="Navegação principal">
-      <a class="nav-campanha" href="index.html#campanha">Campanha de Outubro</a>
       <a href="index.html#clinica">A clínica</a>
       <a href="index.html#tratamentos">Tratamentos</a>
       <a href="index.html#percurso">Como funciona</a>
@@ -1872,7 +1959,7 @@ body{ background: #000; }
           <span class="brand-logo" aria-hidden="true"></span>
         </a>
         <p class="foot-blurb">
-          Implantodontia, estética dental e harmonização facial na R. Eugênio
+          Implantes, estética dental e harmonização facial na R. Eugênio
           Lessman, 130 — Centro, Jaraguá do Sul, SC.
         </p>
         <div class="socials">
@@ -1969,6 +2056,8 @@ const CONFIG = {
       prevencao:    "Olá! Vim pelo site e gostaria de agendar uma limpeza ou avaliação preventiva.",
       enxerto:      "Olá! Vim pelo site e gostaria de saber se meu caso precisa de enxerto ósseo.",
       canal:        "Olá! Vim pelo site e gostaria de saber sobre tratamento de canal.",
+      facetas:      "Olá! Vim pelo site e gostaria de uma avaliação para facetas.",
+      alinhadores:  "Olá! Vim pelo site e gostaria de uma avaliação para alinhadores invisíveis.",
       duvida:       "Olá! Vim pelo site e fiquei com uma dúvida:"
     }
   },
@@ -2013,36 +2102,12 @@ const CONFIG = {
   intervaloAvaliacoes: 6500,
 
   /* ----------------------------------------------------------
-     CAMPANHA — Streit Experience 2.0
-     Tudo da seção da campanha muda aqui. Enquanto um valor
-     começar com "[CONFIRMAR", ele aparece destacado no site.
+     CAMPANHA — nenhuma ativa no momento.
+     Para a próxima, preencha este objeto no mesmo formato da
+     Streit Experience 2.0 (modelo guardado em campanhas/) e
+     recoloque a seção da campanha no HTML.
      ---------------------------------------------------------- */
-  campanha: {
-    nome:  "Streit Experience 2.0",
-    frase: "O mês do seu novo sorriso",
-    dataFinal: "31 de outubro",       // a campanha vale o mês inteiro
-    beneficios: {
-      implantes:   "Benefícios exclusivos durante outubro, apresentados na avaliação",
-      facetas:     "Benefícios exclusivos durante outubro, apresentados na avaliação",
-      alinhadores: "Benefícios exclusivos durante outubro, apresentados na avaliação"
-    },
-    /* CONTADOR — ATUALIZAR TODO DIA
-       Troque só estas duas linhas:
-       valor ........ total de pessoas que já agendaram na edição atual
-       atualizadoEm . data de hoje, no formato ano-mês-dia */
-    contador: {
-      valor: 180,
-      atualizadoEm: "2026-10-05"
-    },
-    // Mensagens do WhatsApp. {tratamento} e {campanha} são trocados sozinhos.
-    whatsapp:          "Olá! Quero agendar uma avaliação para {tratamento} na {campanha}.",
-    whatsappPrincipal: "Olá! Quero agendar uma avaliação na {campanha}.",
-    tratamentos: {
-      implantes:   "implantes dentários",
-      facetas:     "facetas",
-      alinhadores: "alinhadores invisíveis ClearCorrect"
-    }
-  }
+  campanha: null
 };
 
 /* ============================================================
