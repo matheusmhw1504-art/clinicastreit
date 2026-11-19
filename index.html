@@ -1836,6 +1836,25 @@ body{ background: #FFFFFF; color: var(--bone); }
   .campanha-card:hover .btn{ background: #FFFFFF; color: #00735F; border-color: #FFFFFF; }
 }
 
+
+/* Avaliações no computador: com 4 depoimentos, todos cabem na tela.
+   Em vez de carrossel (setas sem função e cartão vazando para a direita),
+   viram uma grade 2 x 2 alinhada ao texto da página, com o nome do
+   paciente sempre no rodapé do cartão. No celular continua carrossel. */
+.band--avaliacoes .quote{ grid-template-rows: auto 1fr auto; }
+@media (min-width: 900px){
+  .band--avaliacoes .carousel .carousel-track{
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: auto;
+    overflow: visible;
+    scroll-snap-type: none;
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  .band--avaliacoes .carousel .carousel-ui{ display: none !important; }
+}
 </style>
 
 
@@ -2977,6 +2996,7 @@ document.querySelectorAll("[data-carrossel]").forEach(function(raiz){
   }
 
   function rodar(){
+    if (getComputedStyle(trilho).overflowX === "visible") return; // em grade, sem carrossel
     if (semMovimento || timer || paginas < 2) return;
     timer = setInterval(function(){ irPara(pagina + 1); }, ritmo);
   }
